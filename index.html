@@ -41,10 +41,7 @@
       font-style: italic;
       margin-bottom: 20px;
     }
-    .lang-switch {
-      display: flex;
-      gap: 8px;
-    }
+    .lang-switch { display: flex; gap: 8px; }
     .lang-switch button {
       background: none;
       border: 1px solid var(--border);
@@ -55,10 +52,7 @@
       cursor: pointer;
       transition: all 0.15s;
     }
-    .lang-switch button.active {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .lang-switch button.active { border-color: var(--accent); color: var(--accent); }
     section {
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -66,50 +60,17 @@
       margin-bottom: 16px;
       background: var(--card);
     }
-    .section-icon {
-      font-size: 18px;
-      margin-bottom: 12px;
-      opacity: 0.7;
-    }
-    h2 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
+    .section-icon { font-size: 18px; margin-bottom: 12px; opacity: 0.7; }
+    h2 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+    p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
     p:last-child { margin-bottom: 0; }
-    ul {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-      padding-left: 18px;
-      margin-bottom: 10px;
-    }
+    ul { font-size: 14px; color: var(--muted); line-height: 1.8; padding-left: 18px; margin-bottom: 10px; }
     ul:last-child { margin-bottom: 0; }
     li { margin-bottom: 4px; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: var(--accent);
-      opacity: 0.7;
-      margin-bottom: 6px;
-    }
-    footer {
-      margin-top: 56px;
-      font-size: 12px;
-      color: var(--muted);
-      opacity: 0.4;
-    }
+    .label { font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--accent); opacity: 0.7; margin-bottom: 6px; }
+    footer { margin-top: 56px; font-size: 12px; color: var(--muted); opacity: 0.4; }
     .de, .en { display: none; }
     .de.visible, .en.visible { display: block; }
     span.de, span.en { display: none; }
@@ -168,14 +129,14 @@
       <li><strong>Reflexionen:</strong> KI-generierte Zusammenfassungen deiner Gedanken, die lokal und in der Cloud gespeichert werden.</li>
       <li><strong>Gesundheitsdaten (optional):</strong> Schlaf, Aktivität und Herzfrequenz aus Apple Health — nur wenn du die Verbindung aktiv herstellst.</li>
       <li><strong>Profilbild (optional):</strong> Wird ausschließlich lokal auf deinem Gerät gespeichert.</li>
-      <li><strong>Technische Kennung:</strong> Eine anonyme Nutzer-ID zur Datenzuordnung in der Cloud (kein Name, keine E-Mail).</li>
+      <li><strong>Anonyme Nutzer-ID:</strong> Eine technische Kennung zur Datenzuordnung in der Cloud (kein Name, keine E-Mail).</li>
     </ul>
     <ul class="en">
       <li><strong>Voice recordings as text:</strong> Your speech is converted to text locally on your device via on-device speech recognition. The audio itself is not stored permanently.</li>
       <li><strong>Reflections:</strong> AI-generated summaries of your thoughts, stored locally and in the cloud.</li>
       <li><strong>Health data (optional):</strong> Sleep, activity, and heart rate from Apple Health — only if you actively enable the connection.</li>
       <li><strong>Profile photo (optional):</strong> Stored exclusively on your device.</li>
-      <li><strong>Technical identifier:</strong> An anonymous user ID for data attribution in the cloud (no name, no email).</li>
+      <li><strong>Anonymous user ID:</strong> A technical identifier for data attribution in the cloud (no name, no email).</li>
     </ul>
   </section>
 
@@ -186,7 +147,7 @@
     <div class="label en">Legal basis</div>
     <h2 class="de visible">Auf welcher Grundlage verarbeiten wir?</h2>
     <h2 class="en">On what basis do we process?</h2>
-    <p class="de visible">Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Vertragserfüllung) — die Kernfunktionen der App (Aufnahme, Reflexion, Musteranalyse) sind der eigentliche Dienst, den du nutzt. Für optional verbundene Gesundheitsdaten gilt deine ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a DSGVO).</p>
+    <p class="de visible">Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Vertragserfüllung) — die Kernfunktionen der App (Aufnahme, Reflexion, Musteranalyse) sind der eigentliche Dienst. Für optional verbundene Gesundheitsdaten gilt deine ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a DSGVO).</p>
     <p class="en">Processing is based on Art. 6(1)(b) GDPR (processing for contract performance) — the core functions of the app (recording, reflection, pattern analysis) constitute the service you use. For optionally connected health data, your explicit consent applies (Art. 9(2)(a) GDPR).</p>
   </section>
 
@@ -197,19 +158,17 @@
     <div class="label en">Third parties</div>
     <h2 class="de visible">Welche Dienste sind beteiligt?</h2>
     <h2 class="en">Which services are involved?</h2>
-    <p class="de visible">Für den Betrieb der App werden folgende Drittanbieter eingesetzt. Alle Anbieter verarbeiten Daten auf Basis von EU-Standardvertragsklauseln (SCC):</p>
-    <p class="en">The following third-party services are used to operate the app. All providers process data under EU Standard Contractual Clauses (SCC):</p>
+    <p class="de visible">Für den Betrieb der App werden folgende Drittanbieter eingesetzt. Alle US-Anbieter verarbeiten Daten auf Basis von EU-Standardvertragsklauseln (SCC):</p>
+    <p class="en">The following third-party services are used to operate the app. All US providers process data under EU Standard Contractual Clauses (SCC):</p>
     <ul class="de visible">
       <li><strong>Supabase Inc. (USA):</strong> Cloud-Datenspeicherung und Authentifizierung. Deine Texte und Reflexionen werden dort verschlüsselt abgelegt. <a href="https://supabase.com/privacy" target="_blank">Datenschutzerklärung</a></li>
       <li><strong>Anthropic PBC (USA):</strong> KI-Verarbeitung zur Erstellung von Reflexionen. Auszüge deiner Texte werden anonym (ohne persönliche Kennung) übertragen. <a href="https://www.anthropic.com/privacy" target="_blank">Datenschutzerklärung</a></li>
-      <li><strong>Cloudflare Inc. (USA):</strong> Routing und Verarbeitung von API-Anfragen. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Datenschutzerklärung</a></li>
-      <li><strong>Apple Inc.:</strong> On-Device Speech Recognition (Spracherkennung läuft lokal auf deinem Gerät), HealthKit, Face ID. <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank">Datenschutzerklärung</a></li>
+      <li><strong>Apple Inc.:</strong> On-Device Speech Recognition (läuft lokal auf deinem Gerät), HealthKit, Face ID, Sign in with Apple. <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank">Datenschutzerklärung</a></li>
     </ul>
     <ul class="en">
       <li><strong>Supabase Inc. (USA):</strong> Cloud storage and authentication. Your texts and reflections are stored there in encrypted form. <a href="https://supabase.com/privacy" target="_blank">Privacy policy</a></li>
       <li><strong>Anthropic PBC (USA):</strong> AI processing for generating reflections. Excerpts of your texts are transmitted anonymously (without personal identifiers). <a href="https://www.anthropic.com/privacy" target="_blank">Privacy policy</a></li>
-      <li><strong>Cloudflare Inc. (USA):</strong> Routing and processing of API requests. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Privacy policy</a></li>
-      <li><strong>Apple Inc.:</strong> On-device speech recognition (runs locally on your device), HealthKit, Face ID. <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">Privacy policy</a></li>
+      <li><strong>Apple Inc.:</strong> On-device speech recognition (runs locally on your device), HealthKit, Face ID, Sign in with Apple. <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">Privacy policy</a></li>
     </ul>
   </section>
 
@@ -260,8 +219,6 @@
     <div class="label en">Supervisory authority</div>
     <h2 class="de visible">Recht auf Beschwerde</h2>
     <h2 class="en">Right to lodge a complaint</h2>
-    <p class="de visible">Du hast das Recht, dich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. Für Bayern ist das:</p>
-    <p class="en">You have the right to lodge a complaint with the competent data protection supervisory authority. For Bavaria, this is:</p>
     <p class="de visible">
       Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
       Promenade 18, 91522 Ansbach<br>
@@ -274,25 +231,25 @@
     </p>
   </section>
 
-  <!-- 8. Keine Werbung, kein Tracking -->
+  <!-- 8. Kein Tracking -->
   <section>
     <div class="section-icon">🚫</div>
     <div class="label de visible">Tracking & Werbung</div>
     <div class="label en">Tracking & ads</div>
     <h2 class="de visible">Kein Tracking, keine Werbung</h2>
     <h2 class="en">No tracking, no ads</h2>
-    <p class="de visible">Daily Mind enthält keine Werbung, keine Analyse-Dienste von Drittanbietern (kein Firebase, kein Mixpanel, kein Meta Pixel o. ä.) und kein Cross-App-Tracking. Dein Verhalten in der App wird nicht zu Werbezwecken genutzt.</p>
-    <p class="en">Daily Mind contains no advertising, no third-party analytics (no Firebase, no Mixpanel, no Meta Pixel etc.) and no cross-app tracking. Your in-app behaviour is not used for advertising purposes.</p>
+    <p class="de visible">Daily Mind enthält keine Werbung und keine Analyse-Dienste von Drittanbietern. Dein Verhalten in der App wird nicht getrackt, deine Daten werden nicht verkauft oder weitergegeben.</p>
+    <p class="en">Daily Mind contains no advertising and no third-party analytics. Your in-app behaviour is not tracked, and your data is not sold or shared.</p>
   </section>
 
   <!-- 9. Automatisierte Entscheidungen -->
   <section>
     <div class="section-icon">🤖</div>
-    <div class="label de visible">Automatisierte Entscheidungen</div>
-    <div class="label en">Automated decisions</div>
-    <h2 class="de visible">Profilbildung und automatisierte Entscheidungen</h2>
-    <h2 class="en">Profiling and automated decisions</h2>
-    <p class="de visible">Daily Mind erstellt KI-generierte Reflexionen auf Basis deiner Eingaben. Diese dienen ausschließlich deiner persönlichen Reflexion und haben keine rechtliche oder vergleichbar bedeutsame Wirkung auf dich. Es findet keine automatisierte Entscheidungsfindung im Sinne von Art. 22 DSGVO statt.</p>
+    <div class="label de visible">KI & Automatisierung</div>
+    <div class="label en">AI & automation</div>
+    <h2 class="de visible">KI-Verarbeitung und automatisierte Entscheidungen</h2>
+    <h2 class="en">AI processing and automated decisions</h2>
+    <p class="de visible">Daily Mind erstellt KI-generierte Reflexionen auf Basis deiner Eingaben. Diese dienen ausschließlich deiner persönlichen Reflexion und haben keine rechtliche oder vergleichbar bedeutsame Wirkung. Es findet keine automatisierte Entscheidungsfindung im Sinne von Art. 22 DSGVO statt.</p>
     <p class="en">Daily Mind generates AI-based reflections from your input. These serve exclusively your personal reflection and have no legal or similarly significant effect on you. No automated decision-making within the meaning of Art. 22 GDPR takes place.</p>
   </section>
 
