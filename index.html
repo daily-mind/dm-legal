@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz — Daily Mind</title>
+  <style>
+    :root {
+      --bg: #0e0e0f;
+      --card: #161618;
+      --border: rgba(255,255,255,0.07);
+      --text: rgba(255,255,255,0.88);
+      --muted: rgba(255,255,255,0.42);
+      --accent: #b8a88a;
+      --max: 640px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    header { margin-bottom: 56px; }
+    .app-name {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      font-style: italic;
+    }
+    .lang-switch {
+      margin-top: 20px;
+      display: flex;
+      gap: 8px;
+    }
+    .lang-switch button {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 4px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .lang-switch button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    section {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 16px;
+      background: var(--card);
+    }
+    .section-icon {
+      font-size: 18px;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 48px;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: 0.5;
+    }
+    .de, .en { display: none; }
+    .de.visible, .en.visible { display: block; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="app-name">Daily Mind</div>
+    <h1 class="de visible">Datenschutz</h1>
+    <h1 class="en">Privacy</h1>
+    <div class="lang-switch">
+      <button class="active" onclick="setLang('de')">Deutsch</button>
+      <button onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <!-- Block 1 -->
+  <section>
+    <div class="section-icon">📱</div>
+    <h2 class="de visible">Was gespeichert wird</h2>
+    <h2 class="en">What's stored</h2>
+    <p class="de visible">Deine Aufnahmen werden als Text auf deinem Gerät gespeichert und für die Synchronisierung sicher in der Cloud abgelegt. Die Inhalte sind nur für dich zugänglich — niemand sonst kann sie lesen.</p>
+    <p class="en">Your recordings are stored as text on your device and securely in the cloud for sync. The contents are accessible only to you — no one else can read them.</p>
+  </section>
+
+  <!-- Block 2 -->
+  <section>
+    <div class="section-icon">🔒</div>
+    <h2 class="de visible">Wie deine Worte reisen</h2>
+    <h2 class="en">How your words travel</h2>
+    <p class="de visible">Damit Reflexionen entstehen können, werden Auszüge deiner Texte anonymisiert zur Verarbeitung gesendet. Kein Name, keine E-Mail, kein persönlicher Identifier wird dabei übertragen — nur der Inhalt selbst, losgelöst von dir.</p>
+    <p class="en">For reflections to take shape, excerpts of your texts are sent anonymously for processing. No name, no email, no personal identifier is transmitted — only the content itself, detached from you.</p>
+  </section>
+
+  <!-- Block 3 -->
+  <section>
+    <div class="section-icon">🙌</div>
+    <h2 class="de visible">Kein Tracking, keine Werbung</h2>
+    <h2 class="en">No tracking, no ads</h2>
+    <p class="de visible">Daily Mind enthält keine Werbung und keine Analyse-Dienste von Drittanbietern. Dein Verhalten in der App wird nicht getrackt, deine Daten werden nicht verkauft oder weitergegeben.</p>
+    <p class="en">Daily Mind contains no advertising and no third-party analytics. Your in-app behaviour is not tracked, and your data is not sold or shared.</p>
+  </section>
+
+  <!-- Block 4 -->
+  <section>
+    <div class="section-icon">📤</div>
+    <h2 class="de visible">Deine Kontrolle</h2>
+    <h2 class="en">Your control</h2>
+    <p class="de visible">Du kannst alle deine Daten jederzeit exportieren oder vollständig löschen — unter Einstellungen › Daten. Das Löschen ist unwiderruflich. Dein Recht auf Auskunft, Berichtigung und Löschung gilt jederzeit.</p>
+    <p class="en">You can export or permanently delete all your data at any time — under Settings › Data. Deletion is irreversible. Your right to access, correction, and erasure applies at all times.</p>
+  </section>
+
+  <!-- Block 5 -->
+  <section>
+    <div class="section-icon">✉️</div>
+    <h2 class="de visible">Kontakt</h2>
+    <h2 class="en">Contact</h2>
+    <p class="de visible">Bei Fragen zum Datenschutz oder zur Verarbeitung deiner Daten erreichst du uns unter: <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a></p>
+    <p class="en">For questions about privacy or how your data is handled, reach us at: <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a></p>
+  </section>
+
+  <footer class="de visible">Letzte Aktualisierung: Juni 2026</footer>
+  <footer class="en">Last updated: June 2026</footer>
+
+</div>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.de, .en').forEach(el => el.classList.remove('visible'));
+    document.querySelectorAll('.' + lang).forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
