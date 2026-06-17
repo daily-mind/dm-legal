@@ -12,7 +12,7 @@
       --text: rgba(255,255,255,0.88);
       --muted: rgba(255,255,255,0.42);
       --accent: #b8a88a;
-      --max: 640px;
+      --max: 680px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -39,9 +39,9 @@
       letter-spacing: -0.5px;
       color: var(--text);
       font-style: italic;
+      margin-bottom: 20px;
     }
     .lang-switch {
-      margin-top: 20px;
       display: flex;
       gap: 8px;
     }
@@ -62,36 +62,58 @@
     section {
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
+      padding: 24px 28px;
       margin-bottom: 16px;
       background: var(--card);
     }
     .section-icon {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       opacity: 0.7;
     }
     h2 {
       font-size: 15px;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     p {
       font-size: 14px;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.8;
+      margin-bottom: 10px;
     }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+    ul:last-child { margin-bottom: 0; }
+    li { margin-bottom: 4px; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
     footer {
-      margin-top: 48px;
+      margin-top: 56px;
       font-size: 12px;
       color: var(--muted);
-      opacity: 0.5;
+      opacity: 0.4;
     }
     .de, .en { display: none; }
     .de.visible, .en.visible { display: block; }
+    span.de, span.en { display: none; }
+    span.de.visible, span.en.visible { display: inline; }
   </style>
 </head>
 <body>
@@ -99,69 +121,205 @@
 
   <header>
     <div class="app-name">Daily Mind</div>
-    <h1 class="de visible">Datenschutz</h1>
-    <h1 class="en">Privacy</h1>
+    <h1>
+      <span class="de visible">Datenschutzerklärung</span>
+      <span class="en">Privacy Policy</span>
+    </h1>
     <div class="lang-switch">
-      <button class="active" onclick="setLang('de')">Deutsch</button>
-      <button onclick="setLang('en')">English</button>
+      <button class="active" onclick="setLang('de', this)">Deutsch</button>
+      <button onclick="setLang('en', this)">English</button>
     </div>
   </header>
 
-  <!-- Block 1 -->
+  <!-- 1. Verantwortlicher -->
   <section>
-    <div class="section-icon">📱</div>
-    <h2 class="de visible">Was gespeichert wird</h2>
-    <h2 class="en">What's stored</h2>
-    <p class="de visible">Deine Aufnahmen werden als Text auf deinem Gerät gespeichert und für die Synchronisierung sicher in der Cloud abgelegt. Die Inhalte sind nur für dich zugänglich — niemand sonst kann sie lesen.</p>
-    <p class="en">Your recordings are stored as text on your device and securely in the cloud for sync. The contents are accessible only to you — no one else can read them.</p>
+    <div class="section-icon">👤</div>
+    <div class="label de visible">Verantwortlicher</div>
+    <div class="label en">Controller</div>
+    <h2 class="de visible">Wer ist verantwortlich?</h2>
+    <h2 class="en">Who is responsible?</h2>
+    <p class="de visible">
+      Verantwortlicher im Sinne der DSGVO:<br>
+      Matthias Kessner<br>
+      [Straße und Hausnummer]<br>
+      [PLZ] München, Bayern, Deutschland<br>
+      <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a>
+    </p>
+    <p class="en">
+      Controller under GDPR:<br>
+      Matthias Kessner<br>
+      [Street and number]<br>
+      [Postcode] Munich, Bavaria, Germany<br>
+      <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a>
+    </p>
   </section>
 
-  <!-- Block 2 -->
+  <!-- 2. Welche Daten -->
   <section>
-    <div class="section-icon">🔒</div>
-    <h2 class="de visible">Wie deine Worte reisen</h2>
-    <h2 class="en">How your words travel</h2>
-    <p class="de visible">Damit Reflexionen entstehen können, werden Auszüge deiner Texte anonymisiert zur Verarbeitung gesendet. Kein Name, keine E-Mail, kein persönlicher Identifier wird dabei übertragen — nur der Inhalt selbst, losgelöst von dir.</p>
-    <p class="en">For reflections to take shape, excerpts of your texts are sent anonymously for processing. No name, no email, no personal identifier is transmitted — only the content itself, detached from you.</p>
+    <div class="section-icon">📋</div>
+    <div class="label de visible">Datenerhebung</div>
+    <div class="label en">Data collected</div>
+    <h2 class="de visible">Welche Daten werden verarbeitet?</h2>
+    <h2 class="en">What data is processed?</h2>
+    <p class="de visible">Daily Mind verarbeitet ausschließlich Daten, die du aktiv eingibst oder freigibst:</p>
+    <p class="en">Daily Mind processes only data you actively enter or grant access to:</p>
+    <ul class="de visible">
+      <li><strong>Sprachaufnahmen als Text:</strong> Deine Spracheingaben werden lokal auf deinem Gerät per Speech-Recognition in Text umgewandelt und gespeichert. Die Audioaufnahme selbst wird nicht dauerhaft gespeichert.</li>
+      <li><strong>Reflexionen:</strong> KI-generierte Zusammenfassungen deiner Gedanken, die lokal und in der Cloud gespeichert werden.</li>
+      <li><strong>Gesundheitsdaten (optional):</strong> Schlaf, Aktivität und Herzfrequenz aus Apple Health — nur wenn du die Verbindung aktiv herstellst.</li>
+      <li><strong>Profilbild (optional):</strong> Wird ausschließlich lokal auf deinem Gerät gespeichert.</li>
+      <li><strong>Technische Kennung:</strong> Eine anonyme Nutzer-ID zur Datenzuordnung in der Cloud (kein Name, keine E-Mail).</li>
+    </ul>
+    <ul class="en">
+      <li><strong>Voice recordings as text:</strong> Your speech is converted to text locally on your device via on-device speech recognition. The audio itself is not stored permanently.</li>
+      <li><strong>Reflections:</strong> AI-generated summaries of your thoughts, stored locally and in the cloud.</li>
+      <li><strong>Health data (optional):</strong> Sleep, activity, and heart rate from Apple Health — only if you actively enable the connection.</li>
+      <li><strong>Profile photo (optional):</strong> Stored exclusively on your device.</li>
+      <li><strong>Technical identifier:</strong> An anonymous user ID for data attribution in the cloud (no name, no email).</li>
+    </ul>
   </section>
 
-  <!-- Block 3 -->
+  <!-- 3. Rechtsgrundlage -->
   <section>
-    <div class="section-icon">🙌</div>
+    <div class="section-icon">⚖️</div>
+    <div class="label de visible">Rechtsgrundlage</div>
+    <div class="label en">Legal basis</div>
+    <h2 class="de visible">Auf welcher Grundlage verarbeiten wir?</h2>
+    <h2 class="en">On what basis do we process?</h2>
+    <p class="de visible">Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Vertragserfüllung) — die Kernfunktionen der App (Aufnahme, Reflexion, Musteranalyse) sind der eigentliche Dienst, den du nutzt. Für optional verbundene Gesundheitsdaten gilt deine ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a DSGVO).</p>
+    <p class="en">Processing is based on Art. 6(1)(b) GDPR (processing for contract performance) — the core functions of the app (recording, reflection, pattern analysis) constitute the service you use. For optionally connected health data, your explicit consent applies (Art. 9(2)(a) GDPR).</p>
+  </section>
+
+  <!-- 4. Drittanbieter -->
+  <section>
+    <div class="section-icon">🔗</div>
+    <div class="label de visible">Drittanbieter</div>
+    <div class="label en">Third parties</div>
+    <h2 class="de visible">Welche Dienste sind beteiligt?</h2>
+    <h2 class="en">Which services are involved?</h2>
+    <p class="de visible">Für den Betrieb der App werden folgende Drittanbieter eingesetzt. Alle Anbieter verarbeiten Daten auf Basis von EU-Standardvertragsklauseln (SCC):</p>
+    <p class="en">The following third-party services are used to operate the app. All providers process data under EU Standard Contractual Clauses (SCC):</p>
+    <ul class="de visible">
+      <li><strong>Supabase Inc. (USA):</strong> Cloud-Datenspeicherung und Authentifizierung. Deine Texte und Reflexionen werden dort verschlüsselt abgelegt. <a href="https://supabase.com/privacy" target="_blank">Datenschutzerklärung</a></li>
+      <li><strong>Anthropic PBC (USA):</strong> KI-Verarbeitung zur Erstellung von Reflexionen. Auszüge deiner Texte werden anonym (ohne persönliche Kennung) übertragen. <a href="https://www.anthropic.com/privacy" target="_blank">Datenschutzerklärung</a></li>
+      <li><strong>Cloudflare Inc. (USA):</strong> Routing und Verarbeitung von API-Anfragen. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Datenschutzerklärung</a></li>
+      <li><strong>Apple Inc.:</strong> On-Device Speech Recognition (Spracherkennung läuft lokal auf deinem Gerät), HealthKit, Face ID. <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank">Datenschutzerklärung</a></li>
+    </ul>
+    <ul class="en">
+      <li><strong>Supabase Inc. (USA):</strong> Cloud storage and authentication. Your texts and reflections are stored there in encrypted form. <a href="https://supabase.com/privacy" target="_blank">Privacy policy</a></li>
+      <li><strong>Anthropic PBC (USA):</strong> AI processing for generating reflections. Excerpts of your texts are transmitted anonymously (without personal identifiers). <a href="https://www.anthropic.com/privacy" target="_blank">Privacy policy</a></li>
+      <li><strong>Cloudflare Inc. (USA):</strong> Routing and processing of API requests. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Privacy policy</a></li>
+      <li><strong>Apple Inc.:</strong> On-device speech recognition (runs locally on your device), HealthKit, Face ID. <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">Privacy policy</a></li>
+    </ul>
+  </section>
+
+  <!-- 5. Speicherdauer -->
+  <section>
+    <div class="section-icon">🗓</div>
+    <div class="label de visible">Speicherdauer</div>
+    <div class="label en">Retention</div>
+    <h2 class="de visible">Wie lange werden Daten gespeichert?</h2>
+    <h2 class="en">How long is data stored?</h2>
+    <p class="de visible">Deine Daten werden gespeichert, solange du die App nutzt. Du kannst alle Daten jederzeit vollständig löschen (Einstellungen › Daten › Alle Daten löschen). Nach der Löschung werden die Daten unverzüglich aus der Cloud entfernt. Es gibt keine gesetzliche Aufbewahrungspflicht für die verarbeiteten Inhalte.</p>
+    <p class="en">Your data is stored for as long as you use the app. You can permanently delete all data at any time (Settings › Data › Delete all data). After deletion, data is promptly removed from the cloud. There is no legal retention obligation for the processed content.</p>
+  </section>
+
+  <!-- 6. Deine Rechte -->
+  <section>
+    <div class="section-icon">🙋</div>
+    <div class="label de visible">Deine Rechte</div>
+    <div class="label en">Your rights</div>
+    <h2 class="de visible">Welche Rechte hast du?</h2>
+    <h2 class="en">What rights do you have?</h2>
+    <p class="de visible">Du hast nach DSGVO folgende Rechte, die du jederzeit unter <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a> geltend machen kannst:</p>
+    <p class="en">Under GDPR you have the following rights, which you can assert at any time at <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a>:</p>
+    <ul class="de visible">
+      <li><strong>Auskunft</strong> über deine gespeicherten Daten (Art. 15 DSGVO)</li>
+      <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+      <li><strong>Löschung</strong> deiner Daten (Art. 17 DSGVO) — auch direkt in der App möglich</li>
+      <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+      <li><strong>Datenübertragbarkeit</strong> — Export direkt in der App möglich (Art. 20 DSGVO)</li>
+      <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li><strong>Widerruf</strong> einer erteilten Einwilligung (z. B. Gesundheitsdaten) jederzeit ohne Angabe von Gründen</li>
+    </ul>
+    <ul class="en">
+      <li><strong>Access</strong> to your stored data (Art. 15 GDPR)</li>
+      <li><strong>Rectification</strong> of inaccurate data (Art. 16 GDPR)</li>
+      <li><strong>Erasure</strong> of your data (Art. 17 GDPR) — also possible directly in the app</li>
+      <li><strong>Restriction</strong> of processing (Art. 18 GDPR)</li>
+      <li><strong>Data portability</strong> — export available directly in the app (Art. 20 GDPR)</li>
+      <li><strong>Objection</strong> to processing (Art. 21 GDPR)</li>
+      <li><strong>Withdrawal</strong> of any consent given (e.g. health data) at any time without giving reasons</li>
+    </ul>
+  </section>
+
+  <!-- 7. Aufsichtsbehörde -->
+  <section>
+    <div class="section-icon">🏛</div>
+    <div class="label de visible">Aufsichtsbehörde</div>
+    <div class="label en">Supervisory authority</div>
+    <h2 class="de visible">Recht auf Beschwerde</h2>
+    <h2 class="en">Right to lodge a complaint</h2>
+    <p class="de visible">Du hast das Recht, dich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. Für Bayern ist das:</p>
+    <p class="en">You have the right to lodge a complaint with the competent data protection supervisory authority. For Bavaria, this is:</p>
+    <p class="de visible">
+      Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+      Promenade 18, 91522 Ansbach<br>
+      <a href="https://www.lda.bayern.de" target="_blank">www.lda.bayern.de</a>
+    </p>
+    <p class="en">
+      Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+      Promenade 18, 91522 Ansbach, Germany<br>
+      <a href="https://www.lda.bayern.de" target="_blank">www.lda.bayern.de</a>
+    </p>
+  </section>
+
+  <!-- 8. Keine Werbung, kein Tracking -->
+  <section>
+    <div class="section-icon">🚫</div>
+    <div class="label de visible">Tracking & Werbung</div>
+    <div class="label en">Tracking & ads</div>
     <h2 class="de visible">Kein Tracking, keine Werbung</h2>
     <h2 class="en">No tracking, no ads</h2>
-    <p class="de visible">Daily Mind enthält keine Werbung und keine Analyse-Dienste von Drittanbietern. Dein Verhalten in der App wird nicht getrackt, deine Daten werden nicht verkauft oder weitergegeben.</p>
-    <p class="en">Daily Mind contains no advertising and no third-party analytics. Your in-app behaviour is not tracked, and your data is not sold or shared.</p>
+    <p class="de visible">Daily Mind enthält keine Werbung, keine Analyse-Dienste von Drittanbietern (kein Firebase, kein Mixpanel, kein Meta Pixel o. ä.) und kein Cross-App-Tracking. Dein Verhalten in der App wird nicht zu Werbezwecken genutzt.</p>
+    <p class="en">Daily Mind contains no advertising, no third-party analytics (no Firebase, no Mixpanel, no Meta Pixel etc.) and no cross-app tracking. Your in-app behaviour is not used for advertising purposes.</p>
   </section>
 
-  <!-- Block 4 -->
+  <!-- 9. Automatisierte Entscheidungen -->
   <section>
-    <div class="section-icon">📤</div>
-    <h2 class="de visible">Deine Kontrolle</h2>
-    <h2 class="en">Your control</h2>
-    <p class="de visible">Du kannst alle deine Daten jederzeit exportieren oder vollständig löschen — unter Einstellungen › Daten. Das Löschen ist unwiderruflich. Dein Recht auf Auskunft, Berichtigung und Löschung gilt jederzeit.</p>
-    <p class="en">You can export or permanently delete all your data at any time — under Settings › Data. Deletion is irreversible. Your right to access, correction, and erasure applies at all times.</p>
+    <div class="section-icon">🤖</div>
+    <div class="label de visible">Automatisierte Entscheidungen</div>
+    <div class="label en">Automated decisions</div>
+    <h2 class="de visible">Profilbildung und automatisierte Entscheidungen</h2>
+    <h2 class="en">Profiling and automated decisions</h2>
+    <p class="de visible">Daily Mind erstellt KI-generierte Reflexionen auf Basis deiner Eingaben. Diese dienen ausschließlich deiner persönlichen Reflexion und haben keine rechtliche oder vergleichbar bedeutsame Wirkung auf dich. Es findet keine automatisierte Entscheidungsfindung im Sinne von Art. 22 DSGVO statt.</p>
+    <p class="en">Daily Mind generates AI-based reflections from your input. These serve exclusively your personal reflection and have no legal or similarly significant effect on you. No automated decision-making within the meaning of Art. 22 GDPR takes place.</p>
   </section>
 
-  <!-- Block 5 -->
+  <!-- 10. Änderungen -->
   <section>
-    <div class="section-icon">✉️</div>
-    <h2 class="de visible">Kontakt</h2>
-    <h2 class="en">Contact</h2>
-    <p class="de visible">Bei Fragen zum Datenschutz oder zur Verarbeitung deiner Daten erreichst du uns unter: <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a></p>
-    <p class="en">For questions about privacy or how your data is handled, reach us at: <a href="mailto:matthias.kessner@googlemail.com">matthias.kessner@googlemail.com</a></p>
+    <div class="section-icon">📝</div>
+    <div class="label de visible">Änderungen</div>
+    <div class="label en">Changes</div>
+    <h2 class="de visible">Aktualisierungen dieser Erklärung</h2>
+    <h2 class="en">Updates to this policy</h2>
+    <p class="de visible">Bei wesentlichen Änderungen dieser Datenschutzerklärung werden wir dich über die App informieren. Die jeweils aktuelle Version ist immer unter dieser URL abrufbar.</p>
+    <p class="en">In case of material changes to this privacy policy, we will notify you via the app. The current version is always available at this URL.</p>
   </section>
 
-  <footer class="de visible">Letzte Aktualisierung: Juni 2026</footer>
-  <footer class="en">Last updated: June 2026</footer>
+  <footer>
+    <span class="de visible">Letzte Aktualisierung: Juni 2026</span>
+    <span class="en">Last updated: June 2026</span>
+  </footer>
 
 </div>
 <script>
-  function setLang(lang) {
+  function setLang(lang, btn) {
     document.querySelectorAll('.de, .en').forEach(el => el.classList.remove('visible'));
     document.querySelectorAll('.' + lang).forEach(el => el.classList.add('visible'));
     document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+    btn.classList.add('active');
+    document.documentElement.lang = lang;
   }
 </script>
 </body>
